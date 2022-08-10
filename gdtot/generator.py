@@ -79,7 +79,7 @@ def getIdFromUrl(link: str):
         res = re.search(regex, link)
         if res is None:
             raise IndexError("GDrive ID not found.")
-        return res.group(5)
+        return res[5]
     parsed = urlparse.urlparse(link)
     return parse_qs(parsed.query)["id"][0]
 

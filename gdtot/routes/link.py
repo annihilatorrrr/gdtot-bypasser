@@ -8,8 +8,7 @@ from gdtot.generator import get_links
 
 @app.route("/link")
 def link_page():
-    link = request.args.get("url")
-    if link:
+    if link := request.args.get("url"):
         try:
             drive_link, direct_link, filename = get_links(
                 link=link, cookies=request.cookies
